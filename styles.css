@@ -1,1 +1,154 @@
-@import url('./styles/normalize.css');
+@import url("./styles/normalize.css");
+
+:root {
+    --color-1: #003366;
+    /* bg main */
+    --color-2: #f2f2f2;
+    --color-3: #009688;
+    --color-4: #ff5722;
+    --color-5: #333333;
+    --color-6: #e3f2fd;
+}
+
+/* tags */
+
+body {
+    background-color: var(--color-2);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+p,
+a {
+    font-family: "Open Sans", system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+p {
+    color: var(--color-5);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* header {
+} */
+
+header, .wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.wrapper--header {
+    background-color: var(--color-1);
+    color: var(--color-6);
+    position: sticky;
+    top: 0;
+}
+
+.wrapper--header a {
+    display: inline-block;
+    padding: 1.5rem 1rem;
+}
+
+.wrapper--header a:hover {
+    background-color: #01203f;
+}
+
+.about__text > div:first-child{
+    display: flex;
+    gap: 1rem;
+}
+
+.about__img {
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+}
+.about__img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+}
+
+.about__text h2 {
+    margin-top: 0;
+}
+
+.about__technologies {
+    /* padding: 0 3rem; */
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.about__technologies li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    /* outline: 1px solid red; */
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.about__technologies li:hover {
+    outline: 2px solid var(--color-4);
+}
+
+
+.about__technologies img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.about__technologies i {
+    font-size: 1.5rem;
+}
+
+.python{
+    color: var(--color-1);
+}
+.css {
+    color: blue;
+}
+
+.html, .database {
+    color: var(--color-4);
+}
+
+.javascript {
+    color: rgb(206, 206, 9);
+}
+
+.node, .vue {
+    color: green;
+}
+
