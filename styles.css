@@ -13,7 +13,8 @@
 /* tags */
 
 body {
-    background-color: var(--color-2);
+    /* background-color: var(--color-2); */
+    background-color: #fff;
 }
 
 ul {
@@ -43,7 +44,7 @@ a {
 
 p {
     color: var(--color-5);
-    line-height: 1.5;
+    line-height: 1.8;
 }
 
 a {
@@ -51,14 +52,7 @@ a {
     color: inherit;
 }
 
-/* header {
-} */
-
-header, .wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
+/* HEADER */
 .wrapper--header {
     background-color: var(--color-1);
     color: var(--color-6);
@@ -66,16 +60,38 @@ header, .wrapper {
     top: 0;
 }
 
-.wrapper--header a {
+.header,
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-inline: 1rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0;
+}
+
+.header__nav a {
     display: inline-block;
     padding: 1.5rem 1rem;
 }
 
-.wrapper--header a:hover {
+.header__nav a:hover {
     background-color: #01203f;
 }
 
-.about__text > div:first-child{
+/* WRAPPER */
+
+.wrapper > section:not(:first-child) {
+    margin-top: 3rem;
+}
+
+/* ABOUT */
+
+.about__user {
     display: flex;
     gap: 1rem;
 }
@@ -85,6 +101,7 @@ header, .wrapper {
     margin-top: 1.5rem;
     margin-right: 1.5rem;
 }
+
 .about__img img {
     width: 200px;
     height: 200px;
@@ -93,18 +110,87 @@ header, .wrapper {
     object-position: 50% 20%;
 }
 
-.about__text h2 {
-    margin-top: 0;
+.about__media {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.github {
+    color: var();
+}
+
+.linkedin {
+    color: var(--color-1);
+}
+
+.email {
+    color: rgb(156, 21, 21);
+}
+
+.about__carrousel {
+    position: relative;
+    max-width: 90%;
+    /* max-width: 800px; */
+    margin: 2rem auto;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    padding: 1rem;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.control {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 24px;
+}
+
+.control:hover {
+    color: rgb(255, 0, 0);
 }
 
 .about__technologies {
-    /* padding: 0 3rem; */
     display: flex;
     flex-wrap: wrap;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
     gap: 1rem;
-    text-align: center;
 }
 
 .about__technologies li {
@@ -115,12 +201,13 @@ header, .wrapper {
     padding: 0.6rem 1rem;
     border-radius: 20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 .about__technologies li:hover {
     outline: 2px solid var(--color-4);
 }
-
 
 .about__technologies img {
     width: 25px;
@@ -133,14 +220,15 @@ header, .wrapper {
     font-size: 1.5rem;
 }
 
-.python{
+.python {
     color: var(--color-1);
 }
 .css {
     color: blue;
 }
 
-.html, .database {
+.html,
+.database {
     color: var(--color-4);
 }
 
@@ -148,7 +236,51 @@ header, .wrapper {
     color: rgb(206, 206, 9);
 }
 
-.node, .vue {
+.node,
+.vue {
     color: green;
 }
 
+.about__myEntity {
+    display: flex;
+    background-color: #fff;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+.myEntity {
+    text-align: center;
+    width: 30%;
+    padding: 0 1rem;
+    font-size: 0.8em;
+}
+
+.myEntity:hover {
+    background-color: var(--color-6);
+}
+
+/* CERTIFICATES */
+
+.certificate ul {
+    list-style: initial;
+    margin-left: 2rem;
+}
+.certificate li {
+    margin-top: 0.8rem;
+}
+
+.certificate li:hover {
+    color: var(--color-4);
+}
+.certificate li:hover a {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--color-5);
+    padding: 1rem;text-align: center;
+    margin-top: 2rem;
+}
+footer p {
+    color: var(--color-2);
+    margin: 0;
+}
